@@ -52,4 +52,4 @@ def similar_users_score(data,person,n=5,similarity=similar_PC):
 
 print similar_ED(critics,'Lisa Rose','Gene Seymour')	
 print similar_PC(critics,'Lisa Rose','Gene Seymour')
-print similar_users_score(critics,'Gene Seymour')
+print similar_users_score(critics,'Toby')
