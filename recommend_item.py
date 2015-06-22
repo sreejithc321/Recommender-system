@@ -12,21 +12,17 @@ critics={'Lisa Rose': {'Lady in the Water': 2.5, 'Snakes on a Plane': 3.5,'Just 
 
 ### Pearson Correlation Score
 def similar_PC(data,person_1,person_2):
-	''' Pearson Correlation : give better results in situations where the data isn't well normalized'''
 	common={}
 	for item in data[person_1]:
 		if item in data[person_2]: 
 			common[item]=1
-			
 	n=len(common)
 	if n==0: return 0
 	per1_sum=sum([data[person_1][item] for item in common])
 	per2_sum=sum([data[person_2][item] for item in common])
 	per1_sum_sqr=sum([pow(data[person_1][item],2) for item in common])
 	per2_sum_sqr=sum([pow(data[person_2][item],2) for item in common])
-
 	prod_sum=sum([data[person_1][item]*data[person_2][item] for item in common])
-
 	num=prod_sum-(per1_sum*per2_sum/n)
 	den=sqrt((per1_sum_sqr-pow(per1_sum,2)/n)*(per2_sum_sqr-pow(per2_sum,2)/n))
 	if den==0: return 0
@@ -57,4 +53,5 @@ def return_recommendations(data,person,similarity=similar_PC):
 	rankings.reverse()
 	return rankings 
 
+# Get recommendation
 print return_recommendations(critics,'Toby')
