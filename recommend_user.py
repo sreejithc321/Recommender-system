@@ -69,4 +69,5 @@ def transform_data(data):
 
 movies = transform_data(critics)
 
+# Get users list
 print return_recommendations(movies,'Just My Luck')
